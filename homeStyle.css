@@ -1,6 +1,7 @@
 * {
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
     font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   }
   
@@ -188,51 +189,29 @@
 
 .perk {
     display: flex;
-    justify-content: left;
+    justify-content: space-between;
     align-items: center;
     height: 33%;
     width: 100%;
     color: white;
+    margin: 0;
 }
 
 #question, #time {
     border-bottom: 0.12rem solid #143837;
 }
 
-#para1, #para2, #para3 {
-    display: flex;
-    align-items: center;
-    text-align: center;
-}
-
-.icon {
-    margin: 0 1rem 0 1rem;
-}
-
-#para1 {
-    width: 25vw;
-    display: flex;
-    justify-content: end;
-}   
-
-#para2 {
-    width: 24.6vw;
-    display: flex;
-    justify-content: end;
-}
-
-#para3 {
-    width: 29.6vw;
-    display: flex;
-    justify-content: end;
-}
-
-
 #perks h3 {
     font-weight: 400;
     font-size: 1.1rem;
     letter-spacing: 1px;
+    margin: 0;
 }
+
+#perks .para {
+    margin: 0;
+}
+
 
 /* ---------------------------------------- */
 #section2 {
@@ -357,8 +336,8 @@
 }
 
 .inner_div:hover {
-    height: 93%;
-    width: 98%;
+    /* height: 93%; */
+    /* width: 98%; */
     box-shadow: 0 0 8px #2c743c93,0 0 16px #2c743c73,0 0 32px #2c743c3d;
     cursor: grab;
 }
@@ -402,7 +381,7 @@
 
 #cards {
     width: 90%;
-    height: 80%;
+    height: auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -410,16 +389,15 @@
 
 .card {
     background-color: #0a2423;
-    height: 60%;
+    height: auto;
     width: 30%;
     border-radius: 1rem;
-    padding: 1vh;
     transition: 250ms ease-in-out;
 }
 
 .card:hover {
-    height: 62%;
-    width: 32%;
+    /* height: 62%; */
+    /* width: 32%; */
     box-shadow: 0 0 8px #2c743ca8,0 0 16px #2c743c91,0 0 32px #2c743c49;
 }
 
@@ -688,7 +666,7 @@
     }
 
     #section1 {
-        height: 100vh;
+        height: 80vh;
         background-position: center;
     }
 
@@ -717,40 +695,11 @@
     .perk {
         justify-content: space-between;
     }
-
-    .icon, #para1, #para2, #para3 {
-        margin: 0 10% 0 10%;
-    }
-
-    #para1 {
-        width: auto;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }   
-    
-    #para2 {
-        width: auto;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    
-    #para3 {
-        width: auto;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-/*     #cta-button {
-    width: 20%;
-    height: 20%;
-    } */
     
     #content button {
         width: 100%;
-        height: 100%;
+        height: auto;
+        padding: 1rem 0;
         background-color: #61ff84;
         text-align: center;
         border: transparent;
@@ -837,7 +786,7 @@
     /* ------------------------ */
 
     #section4 {
-        height: 130vh;
+        height: 80vh;
     }
     
     #heading_section4 {
@@ -851,10 +800,11 @@
         flex-direction: column;
         justify-content: space-evenly;
         align-items: center;
+        gap: 20px;
     }
 
     .card {
-        height: 25%;
+        height: auto;
         width: 80%;
     }
 
@@ -866,7 +816,7 @@
     /* ------------------------ */
 
     #section5 {
-        height: 120vh;
+        height: 80vh;
     }
     
     #heading_section5 {
@@ -883,7 +833,7 @@
     }
     
     .person {
-        height: 26%;
+        height: 30%;
         width: 70%;
     }
     
@@ -895,7 +845,7 @@
 
     /* ------------------------ */
     #footer {
-        height: 110vh;
+        height: 80vh;
     }
 
     #footer #elements {
