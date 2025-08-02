@@ -18,9 +18,9 @@
 <body>
     <div id="navbar1">
         <a href="#section1" id="logo1">
-            <div class="navbar1">
+            <!-- <div id="navbar1-logo">
                 <div id="logo" href="#navbar1"></div>
-            </div>
+            </div> -->
         </a>
         <div id="home1" class="navbar1">
             <a href="#section1">Home</a>
@@ -103,7 +103,7 @@
                     <p>Complete our scientifically designed assessment in a distraction-free environment</p>
                 </div>
             </div>
-            <div id="set1" class="set">
+            <div id="set2" class="set">
                 <div id="logo_set1" class="logo_set">
                     <img src="brain.png" alt="brain">
                 </div>
@@ -112,7 +112,7 @@
                     <p>Recieve instant results with a detailed breakdown of your cognitive abilities</p>
                 </div>
             </div>
-            <div id="set1" class="set">
+            <div id="set3" class="set">
                 <div id="logo_set1" class="logo_set">
                     <img src="award.png" alt="award">
                 </div>
@@ -195,8 +195,8 @@
                     <img src="stars.png" alt="stars" style="height: 2rem;">
                 </div>
                 <div id="body" class="body">
-                    <p>The test provided valuable insights into my cognitive strengths. The deatiled analysis helped me
-                        understand areas where I could improve.</p>
+                    <p>The test provided valuable insights into my cognitive strengths. The dtailed analysis helped me
+                        understand areas where I could improve</p>
                 </div>
             </div>
             <!-- -------- -->
@@ -233,7 +233,6 @@
                         were incredibly helpful</p>
                 </div>
             </div>
-            <!-- ------------ -->
         </div>
     </div>
 
@@ -246,7 +245,7 @@
         <div id="body_section5">
             <div id="person1" class="person">
                 <div id="logo_person1" class="logo_person">
-                    <img src="laraib.jpeg" alt="Laraib" style="height: 100px; border-radius: 50%;">
+                    <img src="laraib.jpeg" alt="Laraib">
                 </div>
                 <div id="content_person1" class="content_person">
                     <h4>Laraib Imam</h4>
@@ -255,7 +254,7 @@
             </div>
             <div id="person1" class="person">
                 <div id="logo_person1" class="logo_person">
-                    <img src="farhan.jpeg" alt="Farhan" style="height: 100px; border-radius: 50%;">
+                    <img src="farhan.jpeg" alt="Farhan">
                 </div>
                 <div id="content_person1" class="content_person">
                     <h4>Muhammad Farhan</h4>
@@ -264,7 +263,7 @@
             </div>
             <div id="person1" class="person">
                 <div id="logo_person1" class="logo_person">
-                    <img src="ammad2.jpeg" alt="Ammad" style="height: 100px; border-radius: 50%;">
+                    <img src="ammad2.jpeg" alt="Ammad">
                 </div>
                 <div id="content_person1" class="content_person">
                     <h4>Ammad Ahmed</h4>
@@ -276,9 +275,9 @@
 
     <!-- ---------------------------- -->
 
-    <section id="contact">
+    <section id="contact" class="p-0">
         <div class="contact">
-            <h1> <span>Contact</span> Us</h1>
+            <h3>Contact Us</h3>
             <div class="contact-container">
                 <div class="contact-form">
                     <h3>We value your feedback and welcome your suggestions.</h3>
@@ -286,7 +285,7 @@
                         For any inquiries or collaboration opportunities, please do not hesitate to reach out. We are
                         here to assist you.
                     </p>
-                    <form action="https://formspree.io/f/xlddnzjl" method="post">
+                    <form id="contact-form" action="https://formspree.io/f/xlddnzjl" method="post">
                         <input type="text" name="Name" placeholder="Enter your name" required>
                         <input type="email" id="email" name="Email" placeholder="Enter your email" required>
                         <textarea name="Feedback" placeholder="Enter your message" rows="5" required></textarea>
@@ -296,12 +295,11 @@
             </div>
         </div>
     </section>
-
     <!-- ---------------------------- -->
     <div id="footer">
         <div id="elements">
             <div id="logo_footer" class="elements_footer">
-                <a href="#navbar1"><img src="mainlogo.png" alt="logo" style="width: 7rem"></a>
+                <a href="#navbar1"><img id="footer-img" src="./IQify logo.png" alt="logo"></a>
                 <p>Discover and develop your intellectual potential through scientific assessment.</p>
             </div>
             <div id="links_footer" class="elements_footer">
@@ -328,6 +326,36 @@
             <p>© 2024 IQify. All rights reserved.</p>
         </div>
     </div>
+
+    <script>
+        const form = document.getElementById("contact-form");
+
+        form.addEventListener("submit", async (e) => {
+            e.preventDefault(); // Prevent the default page reload
+
+            const formData = new FormData(form);
+
+            try {
+                const response = await fetch(form.action, {
+                    method: form.method,
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    alert("Thanks for your message!"); // Or show a modal
+                    form.reset(); // Clear the form
+                } else {
+                    alert("Oops! There was a problem submitting your form.");
+                }
+            } catch (error) {
+                alert("Something went wrong. Please try again later.");
+            }
+        });
+    </script>
+
 
     <script src="homeJS.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
