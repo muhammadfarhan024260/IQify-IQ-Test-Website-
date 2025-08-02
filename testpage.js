@@ -34,7 +34,7 @@ window.onload = function () {
     const name = document.getElementById("name").value;
     const age = document.getElementById("age").value;
 
-    if (name && age>0) {
+    if (name && age>6 && age<=70) {
       // Store user name and age
       sessionStorage.setItem("userName", name);
       sessionStorage.setItem("userAge", age);
@@ -47,10 +47,12 @@ window.onload = function () {
       timerElement.classList.remove("hidden");
       startElapsedTimer();
     } else {
-       if(age<=0){
-        alert("Please enter your correct age.");
+       if(age<=6){
+        alert("Unfortunately you are too young to take the test. Please come back when you are older :)");
       }
-     
+      else if(age>70){
+        alert("Unfortunately you are too old to take the test. Please come back when you are younger :)");
+      } 
     }
   });
 
